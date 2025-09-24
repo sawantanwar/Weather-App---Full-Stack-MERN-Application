@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+html.light {
+  background-color: white;
+  color: black;
+}
+html.light .bg-gray-700 {
+  background-color: #f0f0f0;
+}
+html.light .text-gray-100 {
+  color: #333333;
+}
+html.light .bg-gray-600 {
+  background-color: #e0e0e0;
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-48px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-36px) scaleY(0.98);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(6px) scaleY(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
