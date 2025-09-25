@@ -9,9 +9,10 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
 
+const uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/test';
 
 // connect mongo
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+mongoose.connect(uri)
 .then(()=> console.log('mongoose connected ...'))
 .catch(err=> console.error('mongoose err', err));
 

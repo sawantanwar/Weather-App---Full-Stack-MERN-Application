@@ -22,11 +22,13 @@ export default function WeatherApp({
   const [favorites, setFavorites] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
 
+  const BASE_URL="https://weather-app-tau-two-94.vercel.app";          //used for vercel link
+
   const fetchWeather = async (q) => {
     try {
       setLoading(true);
       setErrorMsg("");
-      const res = await fetch(`/api/weather?q=${encodeURIComponent(q)}`);
+      const res = await fetch(`${BASE_URL}/api/weather?q=${encodeURIComponent(q)}`);
       if (!res.ok) {
         const data = await res.json();
         throw new Error(data.err || "Failed to fetch weather");
@@ -65,7 +67,7 @@ export default function WeatherApp({
     try {
       const token = localStorage.getItem("token");
       if (!token) return;
-      const res = await fetch("/api/favs", {
+      const res = await fetch(`${BASE_URL}/api/favs`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to load favorites");
@@ -88,7 +90,7 @@ export default function WeatherApp({
         return;
       }
       if (favorites.includes(city)) {
-        const res = await fetch("/api/favs", {
+        const res = await fetch(`${BASE_URL}/api/favs`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify({ cty: city }),
@@ -98,7 +100,7 @@ export default function WeatherApp({
           toast.success(`${city} removed from favorites`);
         } else throw new Error("Failed to remove favorite");
       } else {
-        const res = await fetch("/api/favs", {
+        const res = await fetch(`${BASE_URL}/api/favs`, {
           method: "POST",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify({ cty: city }),

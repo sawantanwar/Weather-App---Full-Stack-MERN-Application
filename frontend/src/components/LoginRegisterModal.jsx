@@ -3,9 +3,10 @@ import { toast } from "react-toastify";
 
 export default function LoginRegisterModal({ onClose, onLogin }) {
   const [mode, setMode] = useState("login");
-
   const [loginData, setLoginData] = useState({ em: "", pw: "" });
   const [regData, setRegData] = useState({ nm: "", em: "", pw: "" });
+
+  const BASE_URL="https://weather-app-tau-two-94.vercel.app";   // used for vercel link
 
   const handleLoginChange = (e) =>
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -16,7 +17,7 @@ export default function LoginRegisterModal({ onClose, onLogin }) {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/auth/login", {
+      const res = await fetch(`${BASE_URL}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData),
@@ -37,7 +38,7 @@ export default function LoginRegisterModal({ onClose, onLogin }) {
   const handleRegSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/auth/register", {
+      const res = await fetch(`${BASE_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(regData),
