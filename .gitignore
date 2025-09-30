@@ -1,5 +1,6 @@
 node_modules/
 backend/dist/
+.env
 backend/.env
 frontend/build/
 frontend/.env
