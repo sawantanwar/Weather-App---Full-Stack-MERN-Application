@@ -22,8 +22,8 @@ export default function WeatherApp({
   const [favorites, setFavorites] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
 
-  const BASE_URL="https://weather-app-tau-two-94.vercel.app";          //used for vercel link
-
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL; 
+  
   const fetchWeather = async (q) => {
     try {
       setLoading(true);

@@ -6,7 +6,7 @@ export default function LoginRegisterModal({ onClose, onLogin }) {
   const [loginData, setLoginData] = useState({ em: "", pw: "" });
   const [regData, setRegData] = useState({ nm: "", em: "", pw: "" });
 
-  const BASE_URL="https://weather-app-tau-two-94.vercel.app";   // used for vercel link
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL; 
 
   const handleLoginChange = (e) =>
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
