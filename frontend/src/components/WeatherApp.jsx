@@ -167,6 +167,13 @@ export default function WeatherApp({
           <p className="text-center md:text-left text-gray-900 dark:text-gray-100 text-3xl font-bold pt-20 md:pt-[6rem]">
             The Only Weather App You Need!
           </p>
+
+          {!user && 
+            <p className="text-sm text-white text-center md:text-left pt-35 md:pt-[6rem]">
+              login through heart to use favorites
+            </p>
+          }
+
         </div>
 
         {/* Right Panel */}
@@ -211,7 +218,7 @@ export default function WeatherApp({
           ) : errorMsg ? (
             <div className="text-center flex flex-col items-center justify-center space-y-4 p-4">
               <img
-                src="frontend/public/image/images.png"
+                src="frontend/images/not_found.png"
                 alt="Not Found"
                 className="w-full h-[28rem] object-cover opacity-40"
               />
