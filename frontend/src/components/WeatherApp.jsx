@@ -211,7 +211,7 @@ export default function WeatherApp({
           ) : errorMsg ? (
             <div className="text-center flex flex-col items-center justify-center space-y-4 p-4">
               <img
-                src="https://static.vecteezy.com/system/resources/previews/026/706/496/non_2x/woman-selecting-place-on-globe-black-white-error-404-flash-message-gps-navigator-on-map-monochrome-empty-state-ui-design-page-not-found-popup-cartoon-image-flat-outline-illustration-concept-vector.jpg"
+                src="frontend/public/image/images.png"
                 alt="Not Found"
                 className="w-full h-[28rem] object-cover opacity-40"
               />
