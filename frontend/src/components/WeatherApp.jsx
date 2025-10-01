@@ -218,7 +218,7 @@ export default function WeatherApp({
           ) : errorMsg ? (
             <div className="text-center flex flex-col items-center justify-center space-y-4 p-4">
               <img
-                src="frontend/images/not_found.png"
+                src="/images/not_found.png"
                 alt="Not Found"
                 className="w-full h-[28rem] object-cover opacity-40"
               />
