@@ -133,7 +133,7 @@ export default function WeatherApp({
 
   return (
     <>
-      <div className="flex flex-col md:flex-row max-w-6xl w-full rounded-3xl overflow-hidden shadow-lg bg-gradient-to-br from-indigo-100 via-purple-200 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-black transition-colors duration-700 h-auto max-h-[700px]">
+      <div className="flex flex-col md:flex-row max-w-6xl w-full rounded-3xl overflow-auto h-screen md:overflow-hidden shadow-lg bg-gradient-to-br from-indigo-100 via-purple-200 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-black transition-colors duration-700 md:h-auto max-h-[700px]">
         {/* Left Panel */}
         <div className="flex-1 bg-gradient-to-tr from-gray-100 via-gray-200 to-gray-300 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 bg-opacity-60 rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none flex flex-col p-6 text-gray-900 dark:text-gray-300">
           <div className="flex items-center justify-between space-x-4 mb-6">
@@ -169,7 +169,7 @@ export default function WeatherApp({
           </p>
 
           {!user && 
-            <p className="text-sm text-white text-center md:text-left pt-35 md:pt-[6rem]">
+            <p className="text-sm text-white text-center md:text-lg md:font-medium pt-35 md:pt-[7rem] md:pl-[3rem]">
               login through heart to use favorites
             </p>
           }
@@ -177,7 +177,7 @@ export default function WeatherApp({
         </div>
 
         {/* Right Panel */}
-        <div className="flex-1 rounded-b-3xl md:rounded-r-4xl md:rounded-bl-none p-6 space-y-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500 overflow-auto">
+        <div className="flex-1 rounded-b-3xl md:rounded-r-4xl md:rounded-bl-none p-6 space-y-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500 md:overflow-auto">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-3 font-semibold text-lg">
               <button
